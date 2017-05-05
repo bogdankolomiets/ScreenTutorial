@@ -1,5 +1,6 @@
 package com.bogdankolomiets.screentutorial;
 
+import android.content.Context;
 import android.support.annotation.IdRes;
 import android.support.v4.app.Fragment;
 import android.view.View;
@@ -19,6 +20,14 @@ class FragmentRootContainer implements RootContainer {
 
     @Override
     public View findViewById(@IdRes int id) {
-        return null;
+        if (mFragment.getView() == null) {
+            return null;
+        }
+        return mFragment.getView().findViewById(id);
+    }
+
+    @Override
+    public Context getContainerContext() {
+        return mFragment.getContext();
     }
 }

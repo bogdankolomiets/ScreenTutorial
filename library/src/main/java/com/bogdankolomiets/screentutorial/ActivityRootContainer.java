@@ -1,6 +1,7 @@
 package com.bogdankolomiets.screentutorial;
 
 import android.app.Activity;
+import android.content.Context;
 import android.support.annotation.IdRes;
 import android.support.annotation.UiThread;
 import android.view.View;
@@ -22,5 +23,10 @@ class ActivityRootContainer implements RootContainer {
     @UiThread
     public View findViewById(@IdRes int id) {
         return mActivity.findViewById(id);
+    }
+
+    @Override
+    public Context getContainerContext() {
+        return mActivity;
     }
 }

@@ -1,5 +1,6 @@
 package com.bogdankolomiets.screentutorial;
 
+import android.content.Context;
 import android.support.annotation.IdRes;
 import android.support.annotation.IntegerRes;
 import android.view.View;
@@ -13,4 +14,6 @@ import android.view.View;
 interface RootContainer {
 
     View findViewById(@IdRes int id);
+
+    Context getContainerContext();
 }
