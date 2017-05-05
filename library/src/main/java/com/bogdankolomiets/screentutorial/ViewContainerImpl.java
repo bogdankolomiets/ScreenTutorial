@@ -39,10 +39,10 @@ class ViewContainerImpl implements ViewContainer {
     }
 
     @Override
-    public TutorialView getById(@IdRes int id) throws NotFoundException {
+    public TutorialView getById(@IdRes int id) throws ViewNotFoundException {
         TutorialView result = mViews.get(id);
         if (result == null)
-            throw new NotFoundException("View with provided id does not found");
+            throw new ViewNotFoundException("View with provided id does not found");
         return result;
     }
 

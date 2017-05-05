@@ -18,7 +18,7 @@ interface ViewContainer {
 
     void clean();
 
-    TutorialView getById(@IdRes int id) throws NotFoundException;
+    TutorialView getById(@IdRes int id) throws ViewNotFoundException;
 
     Collection<TutorialView> getAll();
 
