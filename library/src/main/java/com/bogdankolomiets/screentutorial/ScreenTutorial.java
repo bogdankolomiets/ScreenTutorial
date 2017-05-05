@@ -1,7 +1,9 @@
 package com.bogdankolomiets.screentutorial;
 
 import android.app.Activity;
+import android.support.annotation.IdRes;
 import android.support.v4.app.Fragment;
+import android.view.View;
 
 /**
  * @author bogdan
@@ -37,6 +39,13 @@ public class ScreenTutorial {
                 throw new IllegalArgumentException("Fragment can not be null");
             }
             mRootContainer = new FragmentRootContainer(fragment);
+        }
+
+        public void addView(@IdRes int viewId, TutorialText text) {
+            View view = mRootContainer.findViewById(viewId);
+            if (view == null)
+                throw new ViewNotFoundException("Can`t find view with provided id");
+            mViewContainer.add(new TutorialView(viewId, view, text));
         }
     }
 }

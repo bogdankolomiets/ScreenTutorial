@@ -12,10 +12,12 @@ import android.view.View;
 class TutorialView {
     private final int mId;
     private final View mView;
+    private final TutorialText mTutorialText;
 
-    TutorialView(@IdRes int id, View view) {
+    TutorialView(@IdRes int id, View view, TutorialText tutorialText) {
         mId = id;
         mView = view;
+        mTutorialText = tutorialText;
     }
 
     @IdRes
@@ -25,5 +27,9 @@ class TutorialView {
 
     View getView() {
         return mView;
+    }
+
+    public TutorialText getTutorialText() {
+        return mTutorialText;
     }
 }
