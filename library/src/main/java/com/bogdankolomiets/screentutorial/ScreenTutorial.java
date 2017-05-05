@@ -41,11 +41,17 @@ public class ScreenTutorial {
             mRootContainer = new FragmentRootContainer(fragment);
         }
 
-        public void addView(@IdRes int viewId, TutorialText text) {
+        public Builder addView(@IdRes int viewId, TutorialText text) {
             View view = mRootContainer.findViewById(viewId);
             if (view == null)
                 throw new ViewNotFoundException("Can`t find view with provided id");
             mViewContainer.add(new TutorialView(viewId, view, text));
+
+            return this;
+        }
+
+        public ScreenTutorial build() {
+            return new ScreenTutorial(this);
         }
     }
 }

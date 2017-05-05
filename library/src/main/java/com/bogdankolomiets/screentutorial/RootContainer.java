@@ -2,7 +2,6 @@ package com.bogdankolomiets.screentutorial;
 
 import android.content.Context;
 import android.support.annotation.IdRes;
-import android.support.annotation.IntegerRes;
 import android.view.View;
 
 /**
